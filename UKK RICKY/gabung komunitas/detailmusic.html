@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Society - Ruang Hobi</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    .music-body{
+      background: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    .music-navbar{
+      background: rgba(15,23,42,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 18px 0;
+    }
+
+    .music-navbar-brand{
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .music-navbar-brand span{
+      color: #8b5cf6;
+    }
+
+    .music-nav-link{
+      color: white !important;
+      margin-left: 15px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .music-nav-link:hover{
+      color: #8b5cf6 !important;
+    }
+
+    /* HERO */
+    .music-detail-hero{
+      min-height: 75vh;
+      background:
+      linear-gradient(rgba(15,23,42,0.72), rgba(15,23,42,0.9)),
+      url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop');
+
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    .music-tag{
+      display: inline-block;
+      background: rgba(239,68,68,0.2);
+      color: #fca5a5;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .music-detail-hero h1{
+      font-size: 65px;
+      font-weight: bold;
+    }
+
+    .music-detail-hero p{
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 650px;
+      margin-top: 20px;
+    }
+
+    .music-hero-buttons{
+      margin-top: 35px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .music-btn-join{
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 14px 35px;
+      border-radius: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .music-btn-join:hover{
+      background: #dc2626;
+      transform: translateY(-3px);
+      color: white;
+    }
+
+    .btn-music{
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 14px 35px;
+      border-radius: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-music:hover{
+      background: white;
+      color: #0f172a;
+    }
+
+    /* STATS */
+    .music-stats{
+      margin-top: 50px;
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .music-stats h3{
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .music-stats p{
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    /* CONTENT */
+    .music-content-section{
+      padding: 100px 0;
+      background: linear-gradient(to bottom, #0f172a, #111827);
+    }
+
+    .music-section-title{
+      margin-bottom: 40px;
+    }
+
+    .music-section-title h2{
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .music-section-title p{
+      color: #94a3b8;
+    }
+
+    /* POST CARD */
+    .music-post-card{
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 25px;
+      padding: 25px;
+      margin-bottom: 25px;
+      transition: 0.3s;
+    }
+
+    .music-post-card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(239,68,68,0.2);
+    }
+
+    .music-post-user{
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .music-post-user img{
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .music-post-user h5{
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .music-post-user small{
+      color: #94a3b8;
+    }
+
+    .music-post-card p{
+      color: #cbd5e1;
+    }
+
+    .music-post-image{
+      width: 100%;
+      border-radius: 18px;
+      margin-top: 15px;
+    }
+
+    /* SIDEBAR */
+    .music-sidebar-card{
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 25px;
+    }
+
+    .music-sidebar-card h4{
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .music-event-item{
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .music-event-item:last-child{
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .music-event-item h6{
+      margin-bottom: 5px;
+    }
+
+    .music-event-item p{
+      color: #94a3b8;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 991px){
+
+      .music-detail-hero{
+        text-align: center;
+      }
+
+      .music-detail-hero h1{
+        font-size: 45px;
+      }
+
+      .music-hero-buttons{
+        justify-content: center;
+      }
+
+      .music-stats{
+        justify-content: center;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body class="music-body">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top music-navbar">
+
+    <div class="container">
+
+      <a class="navbar-brand music-navbar-brand" href="#">
+        Ruang<span>Hobi</span>
+      </a>
+
+      <button
+        class="navbar-toggler bg-light"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link music-nav-link" href="../index.html">
+              Beranda
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link music-nav-link active text-danger" href="../komunitas.html">
+              Komunitas
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link music-nav-link" href="../event.html">
+              Event
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link music-nav-link" href="../forum.html">
+              Forum
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+  <section class="music-detail-hero">
+
+    <div class="container">
+
+      <span class="music-tag">
+        Music Community
+      </span>
+
+      <h1>
+        Music Society
+      </h1>
+
+      <p>
+        Komunitas pecinta musik untuk sharing lagu,
+        cover music, jamming bareng, dan diskusi dunia musik
+        bersama ribuan member aktif.
+      </p>
+
+      <!-- BUTTON -->
+      <div class="music-hero-buttons">
+
+        <a href="../komunitas.html" class="music-btn-join">
+          Kembali
+        </a>
+
+      </div>
+
+      <!-- STATS -->
+      <div class="music-stats">
+
+        <div>
+          <h3>6K+</h3>
+          <p>Member</p>
+        </div>
+
+        <div>
+          <h3>18+</h3>
+          <p>Event</p>
+        </div>
+
+        <div>
+          <h3>120+</h3>
+          <p>Posting</p>
+        </div>
+
+        <div>
+          <h3>Live</h3>
+          <p>Jam Session</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTENT -->
+  <section class="music-content-section">
+
+    <div class="container">
+
+      <div class="row">
+
+        <!-- FEED -->
+        <div class="col-lg-8">
+
+          <div class="music-section-title">
+
+            <h2>Posting Terbaru</h2>
+
+            <p>
+              Aktivitas terbaru dari member komunitas musik
+            </p>
+
+          </div>
+
+          <!-- POST 1 -->
+          <div class="music-post-card">
+
+            <div class="music-post-user">
+
+              <img src="https://i.pravatar.cc/150?img=45" alt="User">
+
+              <div>
+                <h5>Rifky Guitar</h5>
+                <small>30 menit yang lalu</small>
+              </div>
+
+            </div>
+
+            <p>
+              Baru selesai cover lagu indie favorit 🔥
+              Menurut kalian enaknya next cover apa?
+            </p>
+
+            <img
+              src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=1974&auto=format&fit=crop"
+              class="music-post-image"
+              alt="Music Cover"
+            >
+
+          </div>
+
+          <!-- POST 2 -->
+          <div class="music-post-card">
+
+            <div class="music-post-user">
+
+              <img src="https://i.pravatar.cc/150?img=56" alt="User">
+
+              <div>
+                <h5>Dian Vocal</h5>
+                <small>3 jam yang lalu</small>
+              </div>
+
+            </div>
+
+            <p>
+              Ada yang ikut acoustic night minggu depan?
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="col-lg-4">
+
+          <!-- EVENT -->
+          <div class="music-sidebar-card">
+
+            <h4>Event Mendatang</h4>
+
+            <div class="music-event-item">
+
+              <h6>Acoustic Night</h6>
+
+              <p>16 Mei 2026 • Cafe Harmoni</p>
+
+            </div>
+
+            <div class="music-event-item">
+
+              <h6>Music Cover Challenge</h6>
+
+              <p>22 Mei 2026 • Online</p>
+
+            </div>
+
+            <div class="music-event-item">
+
+              <h6>Live Jam Session</h6>
+
+              <p>28 Mei 2026 • Studio Music ID</p>
+
+            </div>
+
+          </div>
+
+          <!-- ABOUT -->
+          <div class="music-sidebar-card">
+
+            <h4>Tentang Komunitas</h4>
+
+            <p class="text-secondary">
+              Music Society adalah komunitas musik
+              untuk sharing karya, belajar alat musik,
+              dan membangun relasi antar musisi.
+            </p>
+
+            <hr class="border-secondary">
+
+            <p class="mb-2">
+              <i class="fa-solid fa-location-dot text-danger"></i>
+              Indonesia
+            </p>
+
+            <p class="mb-2">
+              <i class="fa-solid fa-music text-danger"></i>
+              Acoustic • Pop • Indie
+            </p>
+
+            <p class="mb-0">
+              <i class="fa-solid fa-users text-danger"></i>
+              6.000+ Member Aktif
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
