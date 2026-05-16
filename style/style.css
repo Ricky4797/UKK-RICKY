@@ -256,6 +256,8 @@
     }
 
 
+
+    /* KOMUNITAS */
     .community-body{
       background: #0f172a;
       font-family: Arial, sans-serif;
@@ -422,6 +424,8 @@
     }
 
 
+
+    /* event */
     .event-body{
       background: #0f172a;
       color: white;
@@ -624,6 +628,7 @@
 
 
 
+    /* FORUM */
     .form-body{
       background: #0f172a;
       color: white;
@@ -847,6 +852,8 @@
 
 
 
+
+    /* DETAIL KOMUNITAS ANIME */
     .anime-body{
       background: #0f172a;
       color: white;
@@ -1106,6 +1113,7 @@
 
 
 
+    /* DETAIL KOMUNITAS CODING */
     .coding-body{
       background: #0f172a;
       color: white;
@@ -1374,6 +1382,7 @@
 
 
 
+    /* DETAIL KOMUNITAS FOTOGRAFI */
     .fotography-body{
       background: #0f172a;
       color: white;
@@ -1634,6 +1643,7 @@
 
 
 
+    /* DETAIL KOMUNITAS GAMES */
     .games-body{
       background: #0f172a;
       color: white;
@@ -1894,6 +1904,7 @@
 
 
 
+    /* DETAIL KOMUNITAS OTOMOTIF */
     .otomotif-body{
       background: #0f172a;
       color: white;
@@ -2154,7 +2165,7 @@
 
 
 
-
+    /* DETAIL EVENT CODING */
     .event-coding-body{
       background: #0f172a;
       color: white;
@@ -2390,6 +2401,7 @@
 
 
 
+    /* DETAIL EVENT COSPLAY */
     .event-cosplay-body{
       background: #0f172a;
       color: white;
@@ -2626,6 +2638,7 @@
 
 
 
+    /* DETAIL EVENT MUSIC */
     .event-music-body{
       background: #0f172a;
       color: white;
@@ -2861,6 +2874,7 @@
 
 
 
+    /* DAFTAR EVENT CODING */
     .daftar-coding-body{
       background: #0f172a;
       color: white;
@@ -3025,7 +3039,7 @@
 
 
 
-
+    /* DAFTAR EVENT CODING */
     .daftar-cosplay-body{
       background: #0f172a;
       color: white;
@@ -3191,6 +3205,7 @@
 
 
 
+    /* DAFTAR EVENT MUSIC */
     .daftar-music-body{
       background: #0f172a;
       color: white;
@@ -3356,6 +3371,7 @@
 
 
 
+    /* CODING FORUM */
     .coding-forum-body{
       background: #0f172a;
       color: white;
@@ -3621,6 +3637,7 @@
 
 
 
+    /* FOTOGRAFI FORUM */
     .fotography-forum-body{
       background: #0f172a;
       color: white;
@@ -3886,6 +3903,7 @@
 
 
 
+    /* GAMING FORUM */
     .gaming-forum-body{
       background: #0f172a;
       color: white;
@@ -4150,6 +4168,7 @@
 
 
 
+    /* DISKUSI CODING FORUM */
     .diskusi-coding-body{
       background: #0f172a;
       color: white;
@@ -4326,6 +4345,7 @@
 
 
 
+    /* DISKUSI FOTOGRAFI FORUM */
     .diskusi-fotography-body{
       background: #0f172a;
       color: white;
@@ -4501,6 +4521,8 @@
 
 
 
+    
+    /* DISKUSI GAMING FORUM */
     .diskusi-gaming-body{
       background: #0f172a;
       color: white;
